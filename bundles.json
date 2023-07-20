@@ -1,0 +1,44 @@
+{
+    "manifest": [
+        {
+            "key": "CaseBundles/Golden_Keychain1.bundle",
+            "dependencyKeys": [
+                "assets/commonassets/physics/physicsmaterials.bundle",
+                "shaders",
+                "cubemaps"
+            ]
+        },
+        {
+            "key": "CaseBundles/Golden_Keychain2.bundle",
+            "dependencyKeys": [
+                "assets/commonassets/physics/physicsmaterials.bundle",
+                "shaders",
+                "cubemaps"
+            ]
+        },
+        {
+            "key": "CaseBundles/Golden_Keychain3.bundle",
+            "dependencyKeys": [
+                "assets/commonassets/physics/physicsmaterials.bundle",
+                "shaders",
+                "cubemaps"
+            ]
+        },
+        {
+        "key": "CaseBundles/Golden_Keycard_Case.bundle",
+        "dependencyKeys": [
+            "shaders",
+            "assets/commonassets/physics/physicsmaterials.bundle",
+            "cubemaps"
+            ]
+        },
+        {
+            "key": "CaseBundles/Golden_Key_Pouch.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        }
+    ]
+}
