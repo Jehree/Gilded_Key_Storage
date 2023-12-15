@@ -68,6 +68,7 @@ class Mod implements IPostAkiLoadMod, IPostDBLoadMod, IPreAkiLoadMod {
         this.pushSupportiveBarters(dbTraders)
         this.makeKeysWeightlessCommaDiscardableAndHaveNoUseLimit(dbItems)
         this.setLabsCardInRaidLimit(restrInRaid, 9)
+        this.allowRustedKeyInSecureContainer(dbItems);
 
         debugUtil.logMissingKeys(this.logger, dbItems, dbLocales)
     }
@@ -129,6 +130,19 @@ class Mod implements IPostAkiLoadMod, IPostDBLoadMod, IPreAkiLoadMod {
             ) {
                 if (dbItems[i]._props.Grids[0]._props.filters[0] === undefined){
                     dbItems[i]._props.Grids[0]._props.filters = compatFiltersElement;
+                }
+            }
+        }
+    }
+
+    // Allow the `Rusted Bloody Key` in secure containers
+    allowRustedKeyInSecureContainer(dbItems){
+        for (const it in dbItems){
+            const itemProps = dbItems[it]._props
+            if (dbItems[it]._parent === "5448bf274bdc2dfc2f8b456a"){
+                const index = itemProps?.Grids[0]?._props?.filters[0]?.ExcludedFilter?.indexOf("64d4b23dc1b37504b41ac2b6")
+                if (index > -1){
+                    itemProps.Grids[0]._props.filters[0].ExcludedFilter.splice(index, 1)
                 }
             }
         }
